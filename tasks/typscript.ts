@@ -8,7 +8,7 @@ import config from './config';
   const typescript = require('gulp-typescript');
 
   gulp.task('compile:ts', ()=> {
-    gulp.src('src/**/*.ts')
+    return gulp.src('src/**/*.ts')
     .pipe(sourcemaps.init())
     .pipe(typescript({
       outFile: 'main.js',

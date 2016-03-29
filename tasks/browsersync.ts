@@ -5,7 +5,7 @@
   const browserSync = require('browser-sync').create();
 
   gulp.task('serve', ()=> {
-    browserSync.init({
+    return browserSync.init({
       server: {
         baseDir: [
           './public',
@@ -16,6 +16,6 @@
   });
   
   gulp.task('reload', ()=> {
-    browserSync.reload();
+    return browserSync.reload();
   });
 })()

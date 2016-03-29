@@ -5,6 +5,6 @@
   const del = require('del');
 
   gulp.task('clean:ts', ()=>{
-    del.sync(['public/scripts']);
+    return del.sync(['public/scripts']);
   });
 })();

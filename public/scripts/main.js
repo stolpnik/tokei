@@ -5,13 +5,18 @@ webpackJsonp([0],[
 	/* WEBPACK VAR INJECTION */(function(fetch) {/// <reference path="../node_modules/rxjs/Rx.d.ts" />
 	"use strict";
 	var Rx = __webpack_require__(2);
-	Rx.Observable.fromArray([1, 2, 3, 4, 5])
+	Rx.Observable.from([1, 2, 3, 4, 5])
+	    .map(function (value) { return value * 100; })
 	    .subscribe(function (value) {
 	    document.querySelector('body').innerHTML += value;
 	});
-	fetch('./aaa.json')
+	var promise = fetch('./aaa.json')
 	    .then(function (data) { return console.log(data); })
 	    .catch(function (error) { return console.log(error); });
+	Rx.Observable.fromPromise(promise)
+	    .subscribe(function (data) {
+	    console.log(data);
+	});
 	
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
