@@ -6,6 +6,7 @@ module.exports = {
     vendor: [
       'es6-shim',
       'rxjs',
+      'd3',
     ]
   },
   output: {
