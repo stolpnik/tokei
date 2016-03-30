@@ -4,7 +4,8 @@
 import * as Rx from 'rxjs';
 import * as d3 from 'd3';
 
-Rx.Observable.fromArray([1,2,3,4,5])
+Rx.Observable.from([1,2,3,4,5])
+.map((value: number)=> value * 100)
 .subscribe((value:number)=>{
   document.querySelector('body').innerHTML += value;
 });
@@ -13,7 +14,7 @@ Rx.Observable.fromEvent(document, 'click')
 .subscribe((e)=> console.log(e));
 
 
-fetch('./aaa.json')
+let promise = fetch('./aaa.json')
 .then((data)=> console.log(data))
 .catch((error)=> console.log(error));
 
@@ -43,3 +44,8 @@ base.selectAll('g')
   });
   return node;
 });
+
+Rx.Observable.fromPromise(promise)
+.subscribe((data)=> {
+    console.log(data);
+})
