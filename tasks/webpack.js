@@ -1,5 +1,3 @@
-/// <reference path="../typings/main.d.ts" />
-
 (()=>{
   const gulp = require('gulp');
   const sourcemaps = require('gulp-sourcemaps');
